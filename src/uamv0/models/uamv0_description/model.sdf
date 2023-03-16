@@ -1,0 +1,940 @@
+<sdf version="1.5">
+  <model name="uamv0">
+    <link name="base_link">
+    <inertial>
+      <pose>
+        0.001663 0.002295 4.1e-05 0 -0 0
+      </pose>
+      <mass>
+        6.30843
+      </mass>
+      <inertia>
+        <ixx>
+          0.054937
+        </ixx>
+        <ixy>
+          -2.27529e-06
+        </ixy>
+        <ixz>
+          6.72062e-07
+        </ixz>
+        <iyy>
+          0.0921712
+        </iyy>
+        <iyz>
+          -4.49306e-07
+        </iyz>
+        <izz>
+          0.0552674
+        </izz>
+      </inertia>
+    </inertial>
+    <collision name="base_link_collision">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/base_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="base_link_visual">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/base_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </visual>
+    </link>
+    <joint name="manip_base" type="revolute">
+      <pose relative_to="base_link">
+        0 0 -0.09398 -1.5708 -0 -2.3131
+      </pose>
+      <parent>
+        base_link
+      </parent>
+      <child>
+        Manip_base_link
+      </child>
+      <axis>
+        <xyz>
+          0 1 0
+        </xyz>
+        <limit>
+          <lower>
+            -1e+16
+          </lower>
+          <upper>
+            1e+16
+          </upper>
+        </limit>
+        <dynamics>
+          <spring_reference>
+            0
+          </spring_reference>
+          <spring_stiffness>
+            0
+          </spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="Manip_base_link">
+    <pose relative_to="manip_base">
+      0 0 0 0 -0 0
+    </pose>
+    <inertial>
+      <pose>
+        -0.014884 0.055311 -0.0044 0 -0 0
+      </pose>
+      <mass>
+        0.589826
+      </mass>
+      <inertia>
+        <ixx>
+          0.00187518
+        </ixx>
+        <ixy>
+          0.000235041
+        </ixy>
+        <ixz>
+          -5.03554e-05
+        </ixz>
+        <iyy>
+          0.00140262
+        </iyy>
+        <iyz>
+          0.000210556
+        </iyz>
+        <izz>
+          0.00146402
+        </izz>
+      </inertia>
+    </inertial>
+    <collision name="Manip_base_link_collision">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/Manip_base_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="Manip_base_link_visual">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/Manip_base_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </visual>
+    </link>
+    <joint name="inter" type="revolute">
+      <pose relative_to="Manip_base_link">
+        0 0.10055 -0.027837 1.5708 -0.95138 1.5708
+      </pose>
+      <parent>
+        Manip_base_link
+      </parent>
+      <child>
+        Inter_link
+      </child>
+      <axis>
+        <xyz>
+          0 0 1
+        </xyz>
+        <limit>
+          <lower>
+            -1
+          </lower>
+          <upper>
+            1
+          </upper>
+          <effort>
+            0
+          </effort>
+          <velocity>
+            0
+          </velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>
+            0
+          </spring_reference>
+          <spring_stiffness>
+            0
+          </spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="Inter_link">
+    <pose relative_to="inter">
+      0 0 0 0 -0 0
+    </pose>
+    <inertial>
+      <pose>
+        -8e-06 -0.120107 0.008724 0 -0 0
+      </pose>
+      <mass>
+        0.448594
+      </mass>
+      <inertia>
+        <ixx>
+          0.00301348
+        </ixx>
+        <ixy>
+          -2.14028e-07
+        </ixy>
+        <ixz>
+          2.95795e-08
+        </ixz>
+        <iyy>
+          0.000232636
+        </iyy>
+        <iyz>
+          -2.61208e-08
+        </iyz>
+        <izz>
+          0.00310391
+        </izz>
+      </inertia>
+    </inertial>
+    <collision name="Inter_link_collision">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/Inter_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="Inter_link_visual">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/Inter_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </visual>
+    </link>
+    <joint name="end" type="revolute">
+      <pose relative_to="Inter_link">
+        0 -0.24 0 0 -0 2.0574
+      </pose>
+      <parent>
+        Inter_link
+      </parent>
+      <child>
+        End_link
+      </child>
+      <axis>
+        <xyz>
+          0 0 1
+        </xyz>
+        <limit>
+          <lower>
+            -1
+          </lower>
+          <upper>
+            1
+          </upper>
+          <effort>
+            0
+          </effort>
+          <velocity>
+            0
+          </velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>
+            0
+          </spring_reference>
+          <spring_stiffness>
+            0
+          </spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="End_link">
+    <pose relative_to="end">
+      0 0 0 0 -0 0
+    </pose>
+    <inertial>
+      <pose>
+        -7.3e-05 0.076193 -0.03834 0 -0 0
+      </pose>
+      <mass>
+        0.455517
+      </mass>
+      <inertia>
+        <ixx>
+          0.00203567
+        </ixx>
+        <ixy>
+          3.36412e-06
+        </ixy>
+        <ixz>
+          8.97115e-08
+        </ixz>
+        <iyy>
+          0.000353093
+        </iyy>
+        <iyz>
+          -2.96333e-05
+        </iyz>
+        <izz>
+          0.0021476
+        </izz>
+      </inertia>
+    </inertial>
+    <collision name="End_link_collision">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/End_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="End_link_visual">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/End_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </visual>
+    </link>
+    <joint name="prop1" type="revolute">
+      <pose relative_to="base_link">
+        0 0.3048 -0.028957 -1.5708 -0 -0.99636
+      </pose>
+      <parent>
+        base_link
+      </parent>
+      <child>
+        Prop1_link
+      </child>
+      <axis>
+        <xyz>
+          0 1 0
+        </xyz>
+        <limit>
+          <lower>
+            -1e+16
+          </lower>
+          <upper>
+            1e+16
+          </upper>
+        </limit>
+        <dynamics>
+          <spring_reference>
+            0
+          </spring_reference>
+          <spring_stiffness>
+            0
+          </spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="Prop1_link">
+    <pose relative_to="prop1">
+      0 0 0 0 -0 0
+    </pose>
+    <inertial>
+      <pose>
+        -0 0.012832 0 0 -0 0
+      </pose>
+      <mass>
+        0.0295952
+      </mass>
+      <inertia>
+        <ixx>
+          0.000164359
+        </ixx>
+        <ixy>
+          2.39694e-19
+        </ixy>
+        <ixz>
+          -1.07447e-05
+        </ixz>
+        <iyy>
+          0.000166384
+        </iyy>
+        <iyz>
+          -1.70059e-18
+        </iyz>
+        <izz>
+          2.76701e-06
+        </izz>
+      </inertia>
+    </inertial>
+    <collision name="Prop1_link_collision">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/Prop1_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="Prop1_link_visual">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/Prop1_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </visual>
+    </link>
+    <joint name="prop2" type="revolute">
+      <pose relative_to="base_link">
+        -0.3048 0 -0.028957 -1.5708 -0 -0.77151
+      </pose>
+      <parent>
+        base_link
+      </parent>
+      <child>
+        Prop2_link
+      </child>
+      <axis>
+        <xyz>
+          0 1 0
+        </xyz>
+        <limit>
+          <lower>
+            -1e+16
+          </lower>
+          <upper>
+            1e+16
+          </upper>
+        </limit>
+        <dynamics>
+          <spring_reference>
+            0
+          </spring_reference>
+          <spring_stiffness>
+            0
+          </spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="Prop2_link">
+    <pose relative_to="prop2">
+      0 0 0 0 -0 0
+    </pose>
+    <inertial>
+      <pose>
+        0 0.012832 0 0 -0 0
+      </pose>
+      <mass>
+        0.0295952
+      </mass>
+      <inertia>
+        <ixx>
+          0.000164359
+        </ixx>
+        <ixy>
+          4.84258e-19
+        </ixy>
+        <ixz>
+          -1.07447e-05
+        </ixz>
+        <iyy>
+          0.000166384
+        </iyy>
+        <iyz>
+          -1.23892e-18
+        </iyz>
+        <izz>
+          2.76701e-06
+        </izz>
+      </inertia>
+    </inertial>
+    <collision name="Prop2_link_collision">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/Prop2_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="Prop2_link_visual">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/Prop2_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </visual>
+    </link>
+    <joint name="prop3" type="revolute">
+      <pose relative_to="base_link">
+        0 -0.3048 -0.028957 -1.5708 0 1.6037
+      </pose>
+      <parent>
+        base_link
+      </parent>
+      <child>
+        Prop3_link
+      </child>
+      <axis>
+        <xyz>
+          0 1 0
+        </xyz>
+        <limit>
+          <lower>
+            -1e+16
+          </lower>
+          <upper>
+            1e+16
+          </upper>
+        </limit>
+        <dynamics>
+          <spring_reference>
+            0
+          </spring_reference>
+          <spring_stiffness>
+            0
+          </spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="Prop3_link">
+    <pose relative_to="prop3">
+      0 0 0 0 -0 0
+    </pose>
+    <inertial>
+      <pose>
+        0 0.012832 -0 0 -0 0
+      </pose>
+      <mass>
+        0.0295952
+      </mass>
+      <inertia>
+        <ixx>
+          0.000164359
+        </ixx>
+        <ixy>
+          -4.24513e-18
+        </ixy>
+        <ixz>
+          -1.07447e-05
+        </ixz>
+        <iyy>
+          0.000166384
+        </iyy>
+        <iyz>
+          -5.201e-17
+        </iyz>
+        <izz>
+          2.76701e-06
+        </izz>
+      </inertia>
+    </inertial>
+    <collision name="Prop3_link_collision">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/Prop3_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="Prop3_link_visual">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/Prop3_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </visual>
+    </link>
+    <joint name="prop4" type="revolute">
+      <pose relative_to="base_link">
+        0.3048 0 -0.028957 -1.5708 -0 1.0336
+      </pose>
+      <parent>
+        base_link
+      </parent>
+      <child>
+        Prop4_link
+      </child>
+      <axis>
+        <xyz>
+          0 1 0
+        </xyz>
+        <limit>
+          <lower>
+            -1e+16
+          </lower>
+          <upper>
+            1e+16
+          </upper>
+        </limit>
+        <dynamics>
+          <spring_reference>
+            0
+          </spring_reference>
+          <spring_stiffness>
+            0
+          </spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="Prop4_link">
+    <pose relative_to="prop4">
+      0 0 0 0 -0 0
+    </pose>
+    <inertial>
+      <pose>
+        0 0.012832 0 0 -0 0
+      </pose>
+      <mass>
+        0.0295952
+      </mass>
+      <inertia>
+        <ixx>
+          0.000164359
+        </ixx>
+        <ixy>
+          9.14572e-19
+        </ixy>
+        <ixz>
+          -1.07447e-05
+        </ixz>
+        <iyy>
+          0.000166384
+        </iyy>
+        <iyz>
+          -2.56373e-18
+        </iyz>
+        <izz>
+          2.76701e-06
+        </izz>
+      </inertia>
+    </inertial>
+    <collision name="Prop4_link_collision">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/Prop4_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="Prop4_link_visual">
+      <pose>
+        0 0 0 0 -0 0
+      </pose>
+      <geometry>
+        <mesh>
+          <scale>
+            1 1 1
+          </scale>
+          <uri>
+            model://uamv0_description/meshes/Prop4_link.STL
+          </uri>
+        </mesh>
+      </geometry>
+    </visual>
+    </link>   
+
+    <!-- Camera -->
+    <joint name="camera_fix" type="fixed">
+      <axis xyz="0 1 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent>End_link</parent>
+      <child>camera_link</child>
+    </joint>
+    <link name="camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>uam/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+        <ros>
+          <namespace>
+            /uam
+          </namespace>
+        </ros>
+      </plugin>
+    </sensor>
+    </link>
+
+    <!-- IMU -->
+    <joint name="imu_fix" type="fixed">
+      <pose relative_to="base_link">
+        0 0 0 -0 0
+      </pose>
+      <parent>
+        base_link
+      </parent>
+      <child>
+        imu_link
+      </child>
+    </joint>
+    <link name="imu_link">
+    <gravity>
+      true
+    </gravity>
+    <pose relative_to="imu_fix">
+      0 0 0 0 -0 0
+    </pose>
+    <sensor name="twr_imu" type="imu">
+      <always_on>
+        true
+      </always_on>
+      <update_rate>
+        100
+      </update_rate>
+      <visualize>
+        true
+      </visualize>
+      <imu>
+        <orientation>
+          <x>
+            <noise type="gaussian">
+              <mean>
+                0.0
+              </mean>
+              <stddev>
+                0.0
+              </stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>
+                0.0
+              </mean>
+              <stddev>
+                0.0
+              </stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>
+                0.0
+              </mean>
+              <stddev>
+                0.0
+              </stddev>
+            </noise>
+          </z>
+        </orientation>
+        <angular_velocity>
+          <x>
+            <noise type="gaussian">
+              <mean>
+                0.0
+              </mean>
+              <stddev>
+                0.0
+              </stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>
+                0.0
+              </mean>
+              <stddev>
+                0.0
+              </stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>
+                0.0
+              </mean>
+              <stddev>
+                0.0
+              </stddev>
+            </noise>
+          </z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x>
+            <noise type="gaussian">
+              <mean>
+                0.0
+              </mean>
+              <stddev>
+                0.0
+              </stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>
+                0.0
+              </mean>
+              <stddev>
+                0.0
+              </stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>
+                0.0
+              </mean>
+              <stddev>
+                0.0
+              </stddev>
+            </noise>
+          </z>
+        </linear_acceleration>
+      </imu>
+      <plugin name="uamv0_robot_imu" filename="libgazebo_ros_imu_sensor.so">
+        <initial_orientation_as_reference>
+          false
+        </initial_orientation_as_reference>
+        <frame_name>
+          imu_link
+        </frame_name>
+        <ros>
+          <namespace>
+            /uam
+          </namespace>
+          <remapping>
+            ~/out:=imu
+          </remapping>
+        </ros>
+      </plugin>
+    </sensor>
+    </link>
+    <plugin name="ros_kinematic" filename="libros_kinematic.so"/>
+  </model>
+</sdf>
